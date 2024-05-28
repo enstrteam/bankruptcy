@@ -12,9 +12,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalComponent } from './modal/modal.component';
 import { ContactsComponent } from './contacts/contacts.component';
-import { AngularYandexMapsModule } from 'angular8-yandex-maps';
 import { FooterComponent } from './footer/footer.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { AngularYandexMapsModule } from 'angular8-yandex-maps';
 
 
 
