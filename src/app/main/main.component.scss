@@ -281,14 +281,9 @@
       height: 100px;
       overflow: hidden;
       position: relative;
-    }
-    &__image {
       mix-blend-mode: luminosity;
-      position: absolute;
-      left: -1%;
-      top: -1%;
     }
-
+    
     &__name {
       font-style: normal;
       color: styles.$color-gray;

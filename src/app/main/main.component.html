@@ -340,8 +340,7 @@
     <h2 class="feedbacks__title">Отзывы</h2>
     <div class="feedbacks__content">
       <div class="feedbacks__feedback feedback" *ngFor = "let item of feedbacks">
-        <div class="feedback__avatar">
-          <img class="feedback__image" src="/assets/images/avatar{{item.id}}.jpg" alt="" />
+        <div class="feedback__avatar" style="background-image: url(/assets/images/avatar{{item.id}}.jpg)">
         </div>
         <p class="feedback__name">{{item.name}}</p>
         <p class="feedback__text">{{item.feedback}}</p>
