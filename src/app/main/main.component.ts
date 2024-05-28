@@ -69,21 +69,25 @@ export class MainComponent {
 
   feedbacks = [
     {
+      id: 1,
       name: "Виктор",
       feedback: '“Я очень доволен работой вашей компании. Все было сделано быстро и профессионально”',
       url: "../../assets/images/avatar1.jpg"
     },
     {
+      id: 2,
       name: "Алина",
       feedback: '"Ваша компания - настоящий профессионал в своем деле"',
       url: "../../assets/images/avatar2.jpg"
     },
     {
+      id: 3,
       name: "Айдар",
       feedback: '“Спасибо вам! Вы спасли меня”',
       url: "../../assets/images/avatar3.jpg"
     },
     {
+      id: 4,
       name: "Альбина",
       feedback: '“Вы сэкономили мне много времени и денег, спасибо!”',
       url: "../../assets/images/avatar4.jpg"
