@@ -1,0 +1,81 @@
+@use "../../styles.scss" as styles;
+
+.contacts {
+  margin-bottom: 160px;
+
+  &__title {
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px 100px;
+  }
+
+  &__map {
+    width: 560px;
+    height: 450px;
+    border-radius: 10px;
+    overflow: hidden;
+    filter: grayscale(100%);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  &__cities,
+  .cities {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+
+    &__city,
+    .city {
+
+      &__title {
+          font-size: 24px;
+          margin-bottom: 10px;
+          color: styles.$color-gray;
+      }  
+
+      &__address-list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 15px;
+      }
+
+      &__address,
+      .address {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 5px;
+        
+        &__street {
+          color: styles.$color-gray;
+        }
+
+        &__phone {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+
+  &:before {
+    @include styles.scroll-offset;
+  }
+}

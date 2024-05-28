@@ -1,0 +1,39 @@
+@use '../../styles.scss' as styles;
+
+.footer {
+    margin-bottom: 60px;
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px 30px;
+    }
+
+    &__copyright {
+        color: styles.$color-gray;
+    }
+
+    &__privacy {
+        
+        .link {
+            text-decoration: underline;
+            cursor: pointer;
+            color: styles.$color-gray;
+        }
+    }
+
+    &__social, .social {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;    
+
+        &__icon {
+            
+        }
+    }
+}

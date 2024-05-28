@@ -1,0 +1,9 @@
+<div class="modal" [class]="{'modal_active':isOpen}">
+    <div class="modal__body">
+        <div class="modal__message">
+            <ng-content>
+            </ng-content>
+        </div>
+        <button class="modal__button" (click)="modalService.closeModal()">Закрыть</button>
+    </div>
+</div>

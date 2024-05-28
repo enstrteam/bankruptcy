@@ -1,0 +1,31 @@
+<section class="contacts" id="contacts" #contacts>
+  <div class="container">
+    <h2 class="contacts__title">Контакты</h2>
+    <div class="contacts__wrapper">
+        <div class="contacts__map" id="map">
+            <ya-map [center]="[54.723860817966326,55.94315798129971]" [zoom]="15" [state]="state">
+                <ya-placemark [geometry]="[54.723860817966326,55.94315798129971]" [properties]="properties"></ya-placemark>
+            </ya-map>
+        </div>
+        <div class="contacts__list">
+            <div class="contacts__cities cities" *ngFor="let address of addressList">
+                <div class="cities__city city">
+                    <div class="city__title">
+                        {{address.city}}
+                    </div>
+                    <div class="city__address-list">
+                        <div class="city__address address" *ngFor="let item of address.addresses">
+                            <div class="address__street">
+                                {{item.address}}
+                            </div>
+                            <div class="address__phone">
+                                <a class="link" href="tel:{{item.phone}}">{{phoneFormatter(item.phone)}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>

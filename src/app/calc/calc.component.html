@@ -1,0 +1,74 @@
+<section class="survey" id="calc" #calc>
+  <div class="container">
+    <h2 class="survey__title">Калькулятор</h2>
+    <div class="survey__wrapper">
+      <div class="survey__button survey__button_hidden" (click)="scrollToPrev()" id="button-prev">
+        <svg
+          class="arrow-button"
+          width="80"
+          height="80"
+          viewBox="0 0 80 80"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="40" cy="40" r="29.5" stroke="white" />
+          <path
+            d="M26.6464 39.6464C26.4512 39.8417 26.4512 40.1583 26.6464 40.3536L29.8284 43.5355C30.0237 43.7308 30.3403 43.7308 30.5355 43.5355C30.7308 43.3403 30.7308 43.0237 30.5355 42.8284L27.7071 40L30.5355 37.1716C30.7308 36.9763 30.7308 36.6597 30.5355 36.4645C30.3403 36.2692 30.0237 36.2692 29.8284 36.4645L26.6464 39.6464ZM52 39.5H27V40.5H52V39.5Z"
+            fill="white"
+          />
+        </svg>
+      </div>
+      <div class="survey__forms-wrapper" id="forms-wrapper">
+        <div class="survey__forms" style="width: calc({{survey.length + 1}} * 100%)" [formGroup]="form">
+          <app-radio-list
+            [options] = "item.list"
+            controlName = "{{item.name}}"
+            [parentForm] = "form"
+            formTitle = "{{item.title}}"
+          *ngFor="let item of survey" style="width: calc(100% / {{survey.length + 1}})" id="{{item.id}}"></app-radio-list>
+          <div class="survey__form" id="{{survey.length + 1}}" style="width: calc(100% / {{survey.length + 1}})" [formGroup]="form">
+              <label for="survey_contacts"></label>
+              <h3 class="form__title">Ваши контактные данные</h3>
+              <div class="form__contacts contacts">
+                  <div class="contacts__wrapper">
+                    <label class="contacts__input input" for="name">
+                      <span class="input__title">Имя</span>
+                      <input class="input__textarea" type="text" size="30" placeholder="Ваше имя" formControlName="name" id="name" [class]="{'input__textarea_invalid':nameControl.invalid && (nameControl.touched || nameControl.dirty)}"/>
+                    </label>
+                    <label class="contacts__input input" for="phone">
+                      <span class="input__title">Телефон</span>
+                      <input class="input__textarea" type="tel" size="30" placeholder="Ваш телефон" formControlName="phone" id="phone" [class]="{'input__textarea_invalid':phoneControl.invalid && (phoneControl.touched || phoneControl.dirty)}"/>
+                    </label>
+                  </div>
+                <label class="contacts__privacy privacy" for="privacy">
+                  <input class="privacy__input" type="checkbox" formControlName="privacy" id="privacy">
+                  <span class="privacy__text">Нажимая на кнопку, я даю свое согласие на обработку персональных данных и соглашаюсь с условиями политики конфиденциальности 
+                  </span>
+                </label>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="survey__button button-next" (click)="scrollToNext()" id="button-next" [class]="{'button-next_disabled':!form.valid && isLastForm()}">
+        <svg
+          class="arrow-button"
+          width="80"
+          height="80"
+          viewBox="0 0 80 80"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="40" cy="40" r="29.5" stroke="white" />
+          <path
+            d="M52.3536 40.3536C52.5488 40.1583 52.5488 39.8417 52.3536 39.6464L49.1716 36.4645C48.9763 36.2692 48.6597 36.2692 48.4645 36.4645C48.2692 36.6597 48.2692 36.9763 48.4645 37.1716L51.2929 40L48.4645 42.8284C48.2692 43.0237 48.2692 43.3403 48.4645 43.5355C48.6597 43.7308 48.9763 43.7308 49.1716 43.5355L52.3536 40.3536ZM27 40.5H52V39.5H27V40.5Z"
+            fill="white"
+          />
+        </svg>
+      </div>
+    </div>
+    <app-modal id="modal-1">
+      <span>Спасибо за заявку!</span>
+      <span>Мы с Вами свяжемся!</span>
+    </app-modal>
+  </div>
+</section>

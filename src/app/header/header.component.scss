@@ -1,0 +1,46 @@
+@use "../../styles.scss" as styles;
+
+
+.header {
+
+  &__background {
+    background: no-repeat right url(../../assets/images/header.png);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 130px 0 80px 0;
+  }
+    
+  &__title {
+    margin-bottom: 30px;
+  }
+    
+  &__subtitle {
+    font-size: 24px; 
+    margin-bottom: 40px;
+  }
+  
+  &__title-list {
+    padding: 10px;
+    margin-bottom: 100px;
+    font-size: 16px;
+    line-height: 150%;
+  }
+  
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 130px;
+    button {
+      cursor: pointer;
+      }
+  }
+}
+
+
+
+
