@@ -10,6 +10,8 @@ import { ModalService } from '../services/modal.service';
 export class ModalComponent {
 
   @Input() id?: string
+  @Input() isSuccess?: boolean = false
+  @Input() message?: string = ''
   isOpen: boolean = false
 
 

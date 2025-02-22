@@ -1,6 +1,7 @@
 <div class="modal" [class]="{'modal_active':isOpen}">
     <div class="modal__body">
         <div class="modal__message">
+            <span [ngClass]="{'success': isSuccess, 'error': !isSuccess}" *ngIf="id === 'modal-1'" [innerHTML]="message"></span>
             <ng-content>
             </ng-content>
         </div>

@@ -23,9 +23,14 @@ export class ModalService {
     this.modals = this.modals.filter(x => x !== modal)
   }
 
-  openModal(id: string): void {
+  openModal(id: string, message?: string, isSuccess?: boolean): void {
     const modal = this.modals.find(x => x.id === id)
-    modal?.open()
+    if (!modal) {
+      throw new Error("Modal not found")
+    }
+    modal.message = message
+    modal.isSuccess = isSuccess
+    modal.open()
   }
 
   closeModal(): void {
