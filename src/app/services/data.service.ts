@@ -9,7 +9,7 @@ export class DataService {
 
   title: string = 'Банкротство физических лиц';
 
-  owner: string = 'ИП Хадисов Вадим Рамилевич';
+  owner: string = 'УфаБанкротство.ру';
   phone: string = '+79659408291';
 
   addressList = [
@@ -19,22 +19,18 @@ export class DataService {
         {
           address: 'Верхнеторговая площадь, 4',
           phone: '+79659408291',
-        },
-        {
-          address: 'Софьи Перовской, 18',
-          phone: '+79659408291',
-        },
+        }
       ],
     },
-    {
-      city: 'Учалы',
-      addresses: [
-        {
-          address: 'Ленина, 12',
-          phone: '+79659408291',
-        },
-      ],
-    },
+    // {
+    //   city: 'Учалы',
+    //   addresses: [
+    //     {
+    //       address: 'Ленина, 12',
+    //       phone: '+79659408291',
+    //     },
+    //   ],
+    // },
   ];
 
   socialWhatsapp: string = 'https://wa.me/' + this.phone;

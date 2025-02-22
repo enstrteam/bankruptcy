@@ -1,8 +1,4 @@
-@use "../../styles.scss" as styles;
-
-
-.header {
-
+.hero {
   &__background {
     background: no-repeat right url(../../assets/images/header.png);
   }
@@ -13,23 +9,30 @@
     justify-content: flex-start;
     padding: 130px 0 80px 0;
   }
-    
+
   &__title {
+    max-width: 500px;
     margin-bottom: 30px;
+    white-space: normal;
+    word-wrap: break-word;
   }
-    
+
   &__subtitle {
-    font-size: 24px; 
+    max-width: 600px;
+    font-size: 24px;
     margin-bottom: 40px;
   }
-  
+
   &__title-list {
     padding: 10px;
     margin-bottom: 100px;
     font-size: 16px;
     line-height: 150%;
+    & li {
+      margin-bottom: 10px;
+    }
   }
-  
+
   &__button {
     display: flex;
     justify-content: center;
@@ -37,10 +40,6 @@
     margin-bottom: 130px;
     button {
       cursor: pointer;
-      }
+    }
   }
 }
-
-
-
-

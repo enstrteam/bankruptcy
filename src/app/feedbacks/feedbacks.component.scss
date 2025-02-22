@@ -1,0 +1,50 @@
+@use "../../mixins.scss" as mixins;
+
+.feedbacks {
+  margin-bottom: 130px;
+
+  &__content {
+    display: flex;
+    gap: 20px;
+    overflow: scroll;
+
+    @media (max-width: 575px) {
+      padding: 0 calc((100% - 270px) / 2);
+    }
+  }
+
+  &__feedback,
+  .feedback {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    font-style: italic;
+
+    &__avatar {
+      box-sizing: border-box;
+      border-radius: 50%;
+      border: 2px solid #d7d7d7;
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+      position: relative;
+      mix-blend-mode: luminosity;
+    }
+
+    &__name {
+      font-style: normal;
+      color: mixins.$color-gray;
+    }
+
+    &__text {
+      width: 270px;
+      text-align: center;
+      font-style: italic;
+    }
+  }
+
+  &:before {
+    @include mixins.scroll-offset;
+  }
+}

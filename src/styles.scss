@@ -1,31 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-$h1-font-size: 40px;
-$h2-font-size: 32px;
-$h3-font-size: 24px;
-$menu-font-size: 16px;
-$button-font-size: 20px;
-$text-font-size: 14px;
-$title-list-font-size: 28px;
-$facts-font-size: 40px;
-$footer-font-size: 16px;
+@use "./mixins.scss" as mixins;
 
-$container-size: 1140px;
-$min-container-size: 540px;
-
-$color-gray: #b4b4b4;
-
-@mixin header-style {
-    font-weight: 400;
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-@mixin scroll-offset {
-  display: block;
-  content: "";
-  height: 70px;
-  margin-top: -70px;
-}
 
 @font-face {
   font-family: "PT Serif", serif;
@@ -45,7 +20,7 @@ body {
   background-color: black;
   color: rgb(225, 225, 225);
   font-family: "PT Serif", serif;
-  font-size: $text-font-size;
+  font-size: mixins.$text-font-size;
 }
 
 .container {
@@ -58,195 +33,47 @@ body {
   color: #fff;
 }
 
-@media (max-width: 650px) {
-  .nav__menu-burger {
-    display: block !important;
-  }
-
-  .nav__wrapper {
-    height: 60px;
-  }
-  
-  .nav__menu, .menu {
-    font-size: 20px !important;
-    height: 100%;
-    width: 50%;
-    position: fixed;
-    display: block !important;
-    top: -100%;
-    left: 0;
-    overflow:auto;
-    padding: 60px 0 0 20px;
-    background: #000;
-    z-index: 1 !important;
-    transition: all 0.5s ease;
-
-    
-    &__list {
-      flex-direction: column;
-    }
-  }
-}
-
-.nav__menu.nav__menu_active {
-  top: 0;
-}
-
 body.locked {
   overflow: hidden;
-}
-
-@media (max-width: 575px) {
-  
-  .stages__content {
-    flex-direction: column;
-  }
-
-
-  .checkboxes {
-    grid-template-columns: auto auto !important;
-    gap: 20px !important;
-    font-size: 0.7em !important;
-
-    .checkbox__wrapper {
-      gap: 10px !important;
-    }
-  }
-
-  .form__title {
-    font-size: 18px;
-    margin-bottom: 30px;
-  }
-  
-  .form__contacts .contacts__input {
-    width: auto !important;
-
-    .input__title {
-      display: none;
-    }
-
-  }
-
-  .privacy__text {
-    font-size: 8px !important;
-  }
-
-  .form__contacts .contacts__privacy {
-    width: auto !important;
-  }
-
-  .fact {
-    justify-content: center !important;
-  }
-
-  .feedbacks__content {
-    padding:0 calc((100% - 270px) / 2);
-  }
-
-  .arrow-button {
-    width: 50px;
-    height: 50px;
-  }
-
-  .form__contacts {
-    row-gap: 10px !important;
-  }
-
-  .footer__wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-@media (min-width: 576px) {
-  
-  .stages__content {
-    flex-direction: column;
-  }
-
-  .checkboxes {
-    gap: 20px 30px !important;
-
-    .checkbox__wrapper {
-      gap: 10px !important;
-    }
-  }
-  
-  .form__contacts .contacts__input {
-    justify-content: space-between !important;
-  }
-
-  .fact {
-    justify-content: center !important;
-  }
-
 }
 
 @media (min-width: 768px ) {
   .container {
     max-width: 720px;
   }
-
-  .form__contacts .contacts__input {
-    justify-content: space-between !important;
-  }
-
 }
 
 @media (min-width: 992px) {
   .container {
     max-width: 960px;
   }
-
-  .checkboxes {
-    gap: 20px 130px !important;
-  }
-
-  .form__contacts .contacts__input {
-    justify-content: space-between !important;
-  }
-
-  .footer__wrapper {
-    flex-direction: row !important;
-  }
-
-  .modal__body {
-    width: 50% !important;
-  }
-  
 }
 
 @media (min-width: 1120px) {
   .container {
-    max-width: $container-size;
+    max-width: mixins.$container-size;
   }
-
-  .form__contacts .contacts__wrapper {
-    flex-direction: row !important;
-    align-items: center !important;
-  }
-
 }
 
 h1 {
-  font-size: $h1-font-size;
+  font-size: mixins.$h1-font-size;
   line-height: 112%;
   font-weight: bold;
 }
 
 h2 {
-    font-size: $h2-font-size;
-    @include header-style();
+    font-size: mixins.$h2-font-size;
+    @include mixins.header-style();
 }
 
 h3 {
-    font-size: $h3-font-size;
-    @include header-style();
+    font-size: mixins.$h3-font-size;
+    @include mixins.header-style();
 }
 
 button {
   font-family: "PT Serif", serif;
-  font-size: $button-font-size;
+  font-size: mixins.$button-font-size;
   line-height: 100%;
   padding: 12px 40px;
   background: #fefefe;

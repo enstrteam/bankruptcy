@@ -1,0 +1,24 @@
+<section class="about" id="about" #about>
+  <div class="container">
+    <h2 class="about__title">О нас</h2>
+    <div class="about__wrapper">
+      <p class="about__text">
+        Наша компания создана для <i>помощи людям</i>, которые оказались
+        <i>в трудной финансовой ситуации</i> и не справляются с долгами
+        самостоятельно. Понимаем, что банкротство - это сложный процесс, который
+        требует профессионального подхода и опыта.
+      </p>
+      <section class="about__advantages advantages">
+        <div
+          class="advantages__advantage advantage"
+          *ngFor="let item of advantages"
+        >
+          <h3 class="advantage__title">{{ item.title }}</h3>
+          <p class="advantage__text">
+            {{ item.text }}
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>

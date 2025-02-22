@@ -1,0 +1,67 @@
+@use "../../mixins.scss" as mixins;
+
+.benefits {
+    margin-bottom: 50px;
+  
+    &__title {
+      margin-bottom: 80px;
+    }
+
+    &__main-benefit, .main-benefit {
+      display: flex;
+      align-items: flex-start;
+      gap:20px;
+      margin-bottom: 90px;
+  
+      &__start {
+        flex-grow: 1;
+        text-align: right;
+        line-height: 170%;
+        color: mixins.$color-gray;
+      }
+      &__end {
+        flex-grow: 3;
+        font-size: 32px;
+        font-style: italic;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        line-height: 110%;
+        text-decoration: none;
+      }
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      gap: 30px;
+      max-width: 560px;
+      margin: 0 auto;
+      margin-bottom: 100px;
+    }
+
+    &__item, .item {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+
+      &__number {    
+        font-size: 32px;
+        color: #6c6c6c;
+      }
+
+      &__text {
+        font-size: 20px;
+      }
+    }
+
+    &__after-bankruptcy {
+      font-style: italic;
+      text-align: center;
+      margin-bottom: 60px;
+      color: mixins.$color-gray;
+    }
+    .second-list {
+      gap: 15px;
+    }
+  }

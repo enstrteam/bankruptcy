@@ -1,0 +1,36 @@
+<section class="bankruptcy__benefits benefits">
+  <div class="container">
+    <h3 class="benefits__title">Преимущества банкротства физических лиц</h3>
+    <div class="benefits__main-benefit main-benefit">
+      <div class="main-benefit__start">
+        Самое главное преимущество <br />
+        банкротства
+      </div>
+      <div class="main-benefit__end">
+        - освобождение от всех долговых обязательств
+      </div>
+    </div>
+    <div class="benefits__list">
+      <div
+        class="benefits__item item"
+        *ngFor="let item of benefitsList; index as i"
+      >
+        <div class="item__number">{{ i + 1 }}.</div>
+        <div class="item__text">
+          {{ item }}
+        </div>
+      </div>
+    </div>
+    <div class="benefits__after-bankruptcy">
+      А после завершения процедуры банкротства вам можно:
+    </div>
+    <div class="benefits__list second-list">
+      <div class="benefits__item item" *ngFor="let item of benefitsList2">
+        <div class="item__dash">-</div>
+        <div class="item__text">
+          {{ item }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

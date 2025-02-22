@@ -1,57 +1,52 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, Renderer2, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss'],
 })
-export class NavComponent implements OnInit {
-  
+export class NavComponent implements OnInit, OnDestroy {
+  @ViewChild('menuElement', { static: true }) menuElementRef!: ElementRef;
+
+  constructor(private renderer: Renderer2) {}
+
+  menu = [
+    { link: "#bankruptcy", title: "О банкротстве" },
+    { link: "#about", title: "О нас" },
+    { link: "#feedback", title: "Отзывы" },
+    { link: "#calc", title: "Калькулятор" },
+    { link: "#contacts", title: "Контакты" },
+  ];
+
+  isActive: boolean = false;
+  private orientationChangeListener: (() => void) | undefined;
+
   ngOnInit(): void {
-
-    window.addEventListener("orientationchange", () => {
+    this.orientationChangeListener = this.renderer.listen('window', 'orientationchange', () => {
       if (this.isActive) {
-        this.toggleMenu()
+        this.toggleMenu();
       }
-    })
+    });
   }
 
-  menu =[
-    {
-      link: "#bankruptcy",
-      title: "О банкротстве",
-    },  
-    {
-      link: "#about",
-      title: "О нас",
-    },  
-    {
-      link: "#feedback",
-      title: "Отзывы",
-    },  
-    {
-      link: "#calc",
-      title: "Калькулятор",
-    },  
-    {
-      link: "#contacts",
-      title: "Контакты",
-    },  
-  ]
+  ngOnDestroy(): void {
+    if (this.orientationChangeListener) {
+      this.orientationChangeListener();
+    }
+  }
 
-  isActive: boolean = false
+  toggleMenu(): void {
+    const menuElement = this.menuElementRef.nativeElement;
+    const bodyElement = document.body;
 
-  toggleMenu() {
     if (!this.isActive) {
-      document.getElementById("menu")?.classList.add("nav__menu_active")
-      document.getElementsByTagName("body")[0].classList.add("locked")
-      this.isActive = true
-    }
-    else {
-      document.getElementById("menu")?.classList.remove("nav__menu_active")
-      document.getElementsByTagName("body")[0].classList.remove("locked")
-      this.isActive = false
+      this.renderer.addClass(menuElement, "nav__menu_active");
+      this.renderer.addClass(bodyElement, "locked");
+      this.isActive = true;
+    } else {
+      this.renderer.removeClass(menuElement, "nav__menu_active");
+      this.renderer.removeClass(bodyElement, "locked");
+      this.isActive = false;
     }
   }
-
 }

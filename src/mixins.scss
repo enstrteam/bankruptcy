@@ -1,0 +1,30 @@
+
+$h1-font-size: 40px;
+$h2-font-size: 32px;
+$h3-font-size: 24px;
+$menu-font-size: 16px;
+$button-font-size: 20px;
+$text-font-size: 14px;
+$title-list-font-size: 28px;
+$facts-font-size: 40px;
+$footer-font-size: 16px;
+
+$container-size: 1140px;
+$min-container-size: 540px;
+
+$color-gray: #b4b4b4;
+$color-dark-gray: #8a8a8a;
+
+
+@mixin header-style {
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+@mixin scroll-offset {
+  display: block;
+  content: "";
+  height: 70px;
+  margin-top: -70px;
+}

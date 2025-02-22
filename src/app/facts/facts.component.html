@@ -1,0 +1,14 @@
+<section class="facts">
+  <div class="container">
+    <h2 class="facts__title">Наши достижения в списании долгов</h2>
+    <div class="facts__content">
+      <div class="facts__fact fact" *ngFor="let item of facts">
+        <div class="fact__number-block">
+          <span class="fact__number">{{ item.number }}</span>
+          <span class="fact__caption">{{ item.caption }}</span>
+        </div>
+        <div class="fact__text">{{ item.text }}</div>
+      </div>
+    </div>
+  </div>
+</section>

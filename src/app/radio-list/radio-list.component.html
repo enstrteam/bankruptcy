@@ -1,10 +1,10 @@
-<div class="survey__form" [formGroup]="parentForm">
+<div class="survey__form form" [formGroup]="parentForm">
     <h3 class="form__title">{{formTitle}}</h3>
-    <div class="form__checkboxes checkboxes">
-      <div class="checkboxes__checkbox checkbox" *ngFor="let option of options; index as i">
-        <label class="checkbox__wrapper" [for]="controlName + '-' + i">
-          <input class="checkbox__input" type="radio" [formControlName]="controlName" [id]="controlName + '-' + i" [value]="option"/>
-          <span class="checkbox__title">{{option}}</span>
+    <div class="form__radio-buttons radio-buttons">
+      <div class="radio-buttons__radio-button radio-button" *ngFor="let option of options; index as i">
+        <label class="radio-button__wrapper" [for]="controlName + '-' + i">
+          <input class="radio-button__input" type="radio" [formControlName]="controlName" [id]="controlName + '-' + i" [value]="option"/>
+          <span class="radio-button__title">{{option}}</span>
         </label>
       </div>
     </div>

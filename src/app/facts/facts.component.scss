@@ -1,0 +1,51 @@
+.facts {
+    margin-bottom: 100px;
+  
+    &__content {
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+  
+    &__fact, .fact {
+      width: 50%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: flex-end;
+      gap: 10px 100px;
+
+      @media (max-width: 575px) {
+        justify-content: center;
+        width: 80%;
+      }
+  
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ffffff80;
+  
+      &__number-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 0 0 130px;
+      }
+  
+      &__number {
+        font-size: 64px;
+      }
+  
+      &__caption {
+        font-style: italic;
+      }
+  
+      &__text {
+        text-align: center;
+        flex: 0 0 270px;
+      }
+    }
+  
+  
+  }

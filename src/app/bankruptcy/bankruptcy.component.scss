@@ -1,0 +1,69 @@
+@use "../../mixins.scss" as mixins;
+
+.bankruptcy {
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    max-width: 560px;
+    margin-bottom: 125px;
+  }
+  &__quote {
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    margin-bottom: 100px;
+  }
+  &__quote-start {
+    font-size: 150px;
+    opacity: 10%;
+    line-height: 60%;
+  }
+  &__quote-end {
+    font-size: 150px;
+    opacity: 10%;
+  }
+  &__quote-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 194px;
+    
+  }
+  .text-block {
+    max-width: 560px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0 10px;
+
+    &__bold {
+      font-size: 32px;
+      font-style: italic;
+      font-weight:700;
+      line-height: 80%;
+      text-align: right;
+      flex: 0 0 220px;
+     
+ 
+    }
+    &__text {
+      font-style: italic;
+      line-height: 180%;
+      flex: 0 0 220px;
+      color: mixins.$color-gray;
+    }
+  }
+
+
+  &:before {
+    @include mixins.scroll-offset;
+  }
+
+}
